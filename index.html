@@ -5,107 +5,253 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brooke Miller | Photojournalism Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;600&family=Fira+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
-    body {
-      font-family: 'Fira Sans', sans-serif;
-      background-color: #fdfdfd;
-      color: #2a2a2a;
-    }
-    h1, h2 {
-      font-family: 'Permanent Marker', cursive;
-      font-weight: 400;
-      color: #4b0082; /* dark purple accent */
-    }
-    .hero {
-      background: #ffffff;
-      border-bottom: 1px solid #dee2e6;
-      color: #222;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .portfolio-img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, filter 0.3s ease;
-      transform: rotate(-1deg);
-      object-fit: cover;
-    }
-    .portfolio-img:hover {
-      transform: rotate(1deg) scale(1.05);
-      filter: brightness(1.05);
-    }
-    .masonry-layout {
-      column-count: 3;
-      column-gap: 1rem;
-    }
-    .masonry-layout img {
-      width: 100%;
-      display: block;
-      margin-bottom: 1rem;
-      break-inside: avoid;
-    }
-    @media (max-width: 992px) {
-      .masonry-layout {
-        column-count: 2;
-      }
-    }
-    @media (max-width: 576px) {
-      .masonry-layout {
-        column-count: 1;
-      }
-    }
-    footer {
-      background-color: #1c1c1c;
-      color: white;
-      padding: 2rem 0;
-      text-align: center;
-    }
-    .social-icons a {
-      color: white;
-      margin: 0 10px;
-      font-size: 1.5rem;
-      transition: color 0.3s ease-in-out;
-    }
-    .social-icons a:hover {
-      color: #aaa;
-    }
-    a {
-      color: #4b0082;
-    }
-    a:hover {
-      color: #3a006b;
-    }
+   body {
+  font-family: 'Inter', sans-serif;
+  background-color: #5f5d5d;
+  color: #eaeaea;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #686666;
+}
+nav a.navbar-brand,
+nav .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+}
+nav .nav-link:hover {
+  color: #ccc !important;
+}
+
+/* Hero Section */
+.hero {
+  background: #000000;
+  border-bottom: 1px solid #444;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Portfolio Images */
+.portfolio-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  transform: rotate(-1deg);
+}
+.portfolio-img:hover {
+  transform: rotate(1deg) scale(1.05);
+  filter: grayscale(0%);
+}
+
+.masonry-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.masonry-layout img {
+  flex: 1 1 calc(30% - 1rem);
+  max-width: calc(30% - 1rem);
+  height: auto;
+}
+@media (max-width: 768px) {
+  .masonry-layout img {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Carousel Image Styling */
+.carousel-inner img {
+  max-height: 65vh;
+  object-fit: contain;
+  width: 100%;
+  background-color: #000;
+}
+
+/* Carousel Caption */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  border-radius: 8px;
+  color: #f5f5f5;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #ccc;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: #ccc;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+.social-icons a:hover {
+  color: #fff;
+}
+
+/* Link Styling */
+a {
+  color: #aaa;
+  text-decoration: none;
+}
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+/* Make hamburger menu icon white and bigger */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Brooke Miller</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
   <header class="hero">
     <h1>Brooke Miller</h1>
     <p class="lead">Photojournalism Portfolio</p>
   </header>
 
-  <section class="container py-5">
+  <!-- About Section -->
+  <section id="about" class="container py-5">
     <div class="row">
       <div class="col-md-6">
         <h2>About Me</h2>
-        <p>I'm a Junior at Northwestern studying Journalism at Medill. I'm most interested in broadcast journalism, but I've found photojournalism very intriguing, as I've learned to try and capture life's beauties and emotion through my work!</p>
+        <p>Welcome! My name is Brooke Miller and I grew up in Naperville, Illinois. Born to a Chicago suburb but a city girl at heart... I'm a student athlete at Northwestern, and am currently in my junior year. I study at the Medill School of Journalism and couldn't see myself graduating with any other degree. I'm interested in following a career in broadcast journalism, and have developed skills/experience for both in front of and behind the camera. I film and edit videos for fun when I'm not practicing or doing homework. I love to podcast, and even co-host my own named “Whiskers”; About the NU Women’s Soccer Team. I also find joy in photography, and love to document special moments and people using my camera. Most of my favourite work focuses on capturing emotion, and the feelings of the moment. Enjoy!</p>
       </div>
       <div class="col-md-6">
-        <!-- Replace the src values below with your own photo URLs -->
         <img src="WSOC.jpg" alt="Photojournalism example 1" class="portfolio-img mb-4">
       </div>
     </div>
   </section>
 
-  <section class="container py-5">
-    <h2 class="text-center mb-5">Portfolio</h2>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="container py-5">
+    <h2 class="text-center mb-5">My Work</h2>
     <div class="masonry-layout">
-      <!-- Replace the src values with your own photo URLs -->
-      <img src="IMG_3667.JPG" alt="Photo description" class="portfolio-img">
-      <img src="IMG_3740.JPG" alt="Photo description" class="portfolio-img">
-      <img src="IMG_3797.JPG" alt="Photo description" class="portfolio-img">
-      <img src="IMG_3916.JPG" alt="Photo description" class="portfolio-img">
-      <img src="IMG_3528.JPG" alt="Photo description" class="portfolio-img">
-      <img src="IMG_3698.JPG" alt="Photo description
+      <img src="36671.jpg" alt="A young adult woman sits on the steps of her house drinking a poppi." class="portfolio-img">
+      <img src="264309.jpg" alt="A speaker looks at his crowd with delight." class="portfolio-img">
+      <img src="284173.jpg" alt="A corgi looks back at his owners at a dog park." class="portfolio-img">
+      <img src="432321.jpg" alt="Students play football on a crowded beach." class="portfolio-img">
+      <img src="IMG_3754.JPG" alt="A girl reads her book as she lays on her backpack at a crowded park." class="portfolio-img">
+      <img src="IMG_3916.JPG" alt="Three young girls jump on their couch and sing using objects as microphones." class="portfolio-img">
+    </div>
+  </section>
+
+  <!-- Stories Section -->
+  <section id="stories" class="container py-5">
+    <h1 class="text-center mb-5">Stories</h1>
+
+    <!-- Gameday Moments Story -->
+    <div class="mb-5">
+      <h3 class="text-center mb-4">The Prattic</h3>
+      <div id="gamedayCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="IMG_3932.JPG" class="d-block w-100" alt="The house of the Prattic is dark, you can only see the lit up attic.">
+            <div class="carousel-caption d-none d-md-block">
+              <p>The student-run comedy club, The Prattic, awaits the start of its weekly show in the attic of 2018 Pratt Ct. on May 26, 2025. Attendees can spot the house by the distinct Christmas lights glowing through the window—and even more so as a line forms closer to the 9:30 show, wrapping from the backyard to the front.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="IMG_4005 2.JPG" class="d-block w-100" alt="A boy looks off to the left while sitting on a stool in front of the microphone.">
+            <div class="carousel-caption d-none d-md-block">
+              <p>Northwestern Junior and Prattic co-founder Luca Hirsch (21) sits where the comedians will perform, waiting to test the spotlight being used for night’s set. Luca has class on Monday nights until 9 and arrives shortly before the doors open to help set up for the audience.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="IMG_4039 2.JPG" class="d-block w-100" alt="A man stands behind a bar taking a drink request in a crowded room.">
+            <div class="carousel-caption d-none d-md-block">
+              <p>Friend of the founder’s, Diego Goldfrank (22), takes a drink request from an entering guest. The Prattic entry fee includes a drink of choice, with audience members able to select beer, seltzer, or, on special occasions, beer with a shot of Malört.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="IMG_4083.JPG" class="d-block w-100" alt="A young man looks at his phone behind a microphone, and in front of a spotlight.">
+            <div class="carousel-caption d-none d-md-block">
+              <p>Second-time performer Jiho Lee (21) refers to the set he outlined on his phone as he delivers his jokes. When he’s not doing stand-up or operating the boom mic on student-produced films, Jiho is completing his chemical engineering degree.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="IMG_4151.JPG" class="d-block w-100" alt="Three young men pose smiling with eachother in front of a sign that says The Prattic.">
+            <div class="carousel-caption d-none d-md-block">
+              <p>Founders Luca Hirsch (21), Jackson Heller (21), and Mateo Garcia-Bryce (21) pose in front of their handmade sign indicating the entrance to the attic. The roommates are overjoyed with the night’s performances—including their own—and hope the space offers a welcoming environment for comedians of all levels—something they feel wasn’t available at Northwestern before.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#gamedayCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gamedayCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Contact</h2>
+    <div class="text-center">
+      <p>Email: <a href="mailto:brookemiller2026@u.northwestern.edu">brookemiller2026@u.northwestern.edu</a></p>
+      <p>Instagram: <a href="https://instagram.com/brookemillerr" target="_blank">@brookemiillerr</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/brooke-miller-52644b278/" target="_blank">Brooke Miller</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Brooke Miller</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/brookemiillerr/?hl=en" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/brooke-miller-52644b278/?trk=opento_sprofile_goalscard" target="_blank"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
